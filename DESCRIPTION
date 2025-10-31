@@ -1,16 +1,16 @@
 Package: HazardGeneEnrichment
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Hazard Ratio Gene Enrichment Analysis
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
-      role = c("aut", "cre")
+      "LEIWEN",
+      email = "leiwen_email@163.com",
+      role = c("aut", "cre"),
+      comment = c(ORCID='0000-0002-1009-6443')
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
+Description: Gene set enrichment analysis (GSEA) based on Hazard Ratio-ranked genes to investigate the distribution of gene sets.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
