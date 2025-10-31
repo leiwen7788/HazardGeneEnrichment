@@ -1,10 +1,7 @@
 
-# R/calculate_hazard.R
+# R/gseaplot_hazard.r
 
-#' Calculate Hazard Ratios from a Cox Proportional Hazards Model
-#'
-#' This function fits a Cox proportional hazards model and extracts
-#' the hazard ratios for specified genes.
+#' This function is used to display the results of gene sets enriched for hazard ratio.
 #'
 #' @param x is result of hazardenrichment.r
 #' @param geneSetID Gene sets to display
@@ -18,7 +15,7 @@
 #' gseaplot_hazard(my_gsea_results, geneSetID = "My_GeneSet_1", title = "GSEA Plot for My_GeneSet_1")
 #' gseaplot2(my_gsea_results, geneSetID = c("My_GeneSet_1", "My_GeneSet_2"),
 #' title = "GSEA Plot for Custom Gene Sets")
-#'
+#' @name gseaplot_hazard
 library(enrichplot)
 library(RColorBrewer)
 gseaplot_hazard<-function (x, geneSetID, title = "", color = "green", base_size = 11,

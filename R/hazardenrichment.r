@@ -7,7 +7,7 @@
 #'
 #' @param geneList The reference gene sets we need to enrich to,for example 'TCGA-BRCA'
 #' @param TERM2GENE The gene sets to be analyzed.
-#' @return
+#' @return my_gsea_results
 #' @export
 #'
 #' @examples
