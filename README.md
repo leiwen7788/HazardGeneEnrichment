@@ -14,9 +14,8 @@ To visualize GSEA results, including enrichment plots and key statistical data.
 You can install the HazardGeneEnrichment package from GitHub using devtools:
 
 If devtools is not already installed
-```install.packages("devtools")
-
-devtools::install_github("leiwen7788/HazardGeneEnrichment")```
+```install.packages("devtools")```
+``` devtools::install_github('leiwen7788/HazardGeneEnrichment') ```
 
 ## Dependencies
 
@@ -149,7 +148,7 @@ If the peak appears at the front of the ranked gene list (Running Enrichment Sco
 If the peak appears at the back of the ranked gene list (Running Enrichment Score < 0), it indicates that the marker genes of that cell cluster are associated with a low Hazard Ratio (i.e., better prognosis).
 P-value and q-value (FDR): These values (typically shown in the legend or a table) are used to determine the statistical significance of the enrichment. A qvalue < 0.25 or qvalue < 0.05 is usually considered significant enrichment.
 Through this analysis, you can identify which single-cell subpopulations' molecular characteristics (represented by their marker genes) are significantly associated with the survival prognosis of patients in specific cancer types.
-
+![example](images/example.png)
 ## License
 
 GPL-3
