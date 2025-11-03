@@ -1,6 +1,6 @@
-#HazardGeneEnrichment
+# HazardGeneEnrichment
 
-##Introduction
+## Introduction
 
 HazardGeneEnrichment is an R package designed to perform Hazard Ratio-based Gene Set Enrichment Analysis (GSEA) by integrating single-cell RNA sequencing (scRNA-seq) data with Cancer Genome Atlas (TCGA) survival data. This package provides a suite of functions to identify single-cell cluster-specific marker genes and assess the association of these gene sets with prognostic risk in TCGA cancer cohorts.
 Objectives
@@ -9,7 +9,7 @@ To rank genes in TCGA cancer cohorts based on their Hazard Ratios.
 To perform GSEA on single-cell marker gene sets to explore their association with cancer patient survival prognosis.
 To visualize GSEA results, including enrichment plots and key statistical data.
 
-##Installation
+## Installation
 
 You can install the HazardGeneEnrichment package from GitHub using devtools:
 
@@ -18,7 +18,7 @@ If devtools is not already installed
 
 `devtools::install_github("leiwen7788/HazardGeneEnrichment")`
 
-##Dependencies
+## Dependencies
 
 The HazardGeneEnrichment package relies on the following CRAN and Bioconductor packages. devtools should automatically install these dependencies when you install HazardGeneEnrichment.
 tidyverse (for data manipulation, including dplyr and ggplot2)
@@ -27,18 +27,18 @@ gridExtra (for plot arrangement)
 Package Functions Overview
 The HazardGeneEnrichment package primarily offers the following core functionalities:
 
-*display_genesets(): Displays a list of TCGA cancer types supported for analysis by this package.
-*HazardEnrichment(): The main function to execute Hazard Ratio-based GSEA.
-*gseaplot_hazard(): Plots GSEA enrichment curves, with an option to include a p-value table.
+* display_genesets(): Displays a list of TCGA cancer types supported for analysis by this package.
+* HazardEnrichment(): The main function to execute Hazard Ratio-based GSEA.
+* gseaplot_hazard(): Plots GSEA enrichment curves, with an option to include a p-value table.
 
-##Detailed Usage Workflow
+## Detailed Usage Workflow
 
 This section will detail how to use the HazardGeneEnrichment package and reproduce the analysis workflow you've demonstrated in your code.
 
-###1. Load Necessary Libraries
+### 1. Load Necessary Libraries
 
-`# Load your developed package`
-`library(HazardGeneEnrichment)`
+` # Load your developed package `
+` library(HazardGeneEnrichment) `
 
 `# Load other dependency packages`
 `library(tidyverse)`
@@ -46,11 +46,11 @@ This section will detail how to use the HazardGeneEnrichment package and reprodu
 `library(gridExtra) # For combining plots`
 
 
-###2. Prepare Input Data
+### 2. Prepare Input Data
 
 You will need to prepare a marker gene table from single-cell RNA sequencing data, along with gene expression and clinical survival data from a TCGA cancer cohort.
 
-####2.1 Load Marker Gene Table
+#### 2.1 Load Marker Gene Table
 
 The marker table contains differentially expressed genes identified from single-cell data. We assume it has been pre-processed to include columns like cluster and avg_log2FC.
 
@@ -60,7 +60,7 @@ The marker table contains differentially expressed genes identified from single-
                      `header = TRUE, # Adjust based on your file's actual header status`
                      `sep = "\t")    # Adjust based on your file's actual separator`
                      
-####2.2 Load Single-Cell Gene List
+#### 2.2 Load Single-Cell Gene List
 
 This is a list of all genes present in your single-cell dataset, which will be used as the background gene set for GSEA.
 
@@ -73,7 +73,7 @@ This is a list of all genes present in your single-cell dataset, which will be u
   `singlecell_gene <- as.character(singlecell_gene)`
 `}`
 
-####2.3 Filter Top 50 Marker Genes per Cluster
+#### 2.3 Filter Top 50 Marker Genes per Cluster
 This step prepares the gene sets for GSEA enrichment analysis. We select the top 50 genes with the highest avg_log2FC for each cell cluster.
 
 `top50_markers <- marker %>%`
@@ -83,7 +83,7 @@ This step prepares the gene sets for GSEA enrichment analysis. We select the top
 `# View a portion of the filtered marker genes`
 `head(top50_markers)`
 
-####2.4 Format Gene Set Data (TERM2GENE)
+#### 2.4 Format Gene Set Data (TERM2GENE)
 
 GSEA tools like clusterProfiler typically require gene set data in a specific format: a data frame with two columns, term and gene. The term column represents the gene set name (here, the cell cluster name), and the gene column represents the gene ID.
 
@@ -97,7 +97,7 @@ GSEA tools like clusterProfiler typically require gene set data in a specific fo
 `# View a portion of the formatted gene set data`
 `head(TERM2GENE)`
 
-###3. View Available TCGA Cancer Cohorts
+### 3. View Available TCGA Cancer Cohorts
 
 The display_genesets() function shows a list of TCGA cancer types that HazardGeneEnrichment package supports for analysis.
 
@@ -108,7 +108,7 @@ Example output:
 "TCGA-ACC"     "TCGA-BLCA"    "TCGA-BRCA"    "TCGA-CESC"    ... "TCGA-UVM"     "NB(GSE85047)"`
 These are the values you can pass to the TCGA_cancer_type argument of the HazardEnrichment function.
 
-###4. Perform Hazard Ratio-based GSEA
+### 4. Perform Hazard Ratio-based GSEA
 
 Now, we can use the HazardEnrichment() function to perform GSEA for a specific TCGA cancer cohort. In this example, we select TCGA-HNSC (Head and Neck Squamous Cell Carcinoma).
 
@@ -128,7 +128,7 @@ Now, we can use the HazardEnrichment() function to perform GSEA for a specific T
 `# View the gene set IDs (cluster names) from the GSEA results`
 `unique(my_gsea_results@result$ID)`
 
-###5. Visualize GSEA Results
+### 5. Visualize GSEA Results
 
 Use the gseaplot_hazard() function to draw the GSEA enrichment curves. You can choose to plot all significantly enriched gene sets or specify particular gene set IDs.
 
@@ -142,7 +142,7 @@ Use the gseaplot_hazard() function to draw the GSEA enrichment curves. You can c
 `# If you want to plot a single gene set, e.g., the first significantly enriched gene set`
 
 
-##Interpretation of Results
+## Interpretation of Results
 
 The GSEA enrichment plot (output of gseaplot_hazard) will show the distribution of each single-cell cluster (as a gene set) within the gene list ranked by Hazard Ratio.
 Peak of the Enrichment Curve:
@@ -151,6 +151,6 @@ If the peak appears at the back of the ranked gene list (Running Enrichment Scor
 P-value and q-value (FDR): These values (typically shown in the legend or a table) are used to determine the statistical significance of the enrichment. A qvalue < 0.25 or qvalue < 0.05 is usually considered significant enrichment.
 Through this analysis, you can identify which single-cell subpopulations' molecular characteristics (represented by their marker genes) are significantly associated with the survival prognosis of patients in specific cancer types.
 
-##License
+## License
 
 GPL-3
