@@ -113,7 +113,74 @@ display_genesets()
 ```
 
 Example output:
-"TCGA-ACC"     "TCGA-BLCA"    "TCGA-BRCA"    "TCGA-CESC"    ... "TCGA-UVM"     "NB(GSE85047)"`
+*TCGA-ACC: Adrenocortical Carcinoma (肾上腺皮质癌)
+A rare cancer that forms in the outer layer of the adrenal glands (adrenal cortex).
+*TCGA-BLCA: Bladder Urothelial Carcinoma (膀胱尿路上皮癌)
+Cancer that begins in the urothelial cells that line the bladder.
+*TCGA-BRCA: Breast Invasive Carcinoma (乳腺浸润性癌)
+The most common type of breast cancer, where cancer cells have broken through the milk ducts or lobules and invaded surrounding breast tissue.
+*TCGA-CESC: Cervical Squamous Cell Carcinoma and Endocervical Adenocarcinoma (宫颈鳞状细胞癌和宫颈内腺癌)
+Cancers originating in the cervix, encompassing both squamous cell carcinoma (most common) and adenocarcinoma.
+*TCGA-CHOL: Cholangiocarcinoma (胆管癌)
+A rare cancer that forms in the bile ducts, which are tubes that carry digestive fluid (bile) from the liver to the small intestine.
+*TCGA-COAD: Colon Adenocarcinoma (结肠腺癌)
+A type of cancer that begins in the glandular cells of the colon, which are responsible for producing mucus. It's a common form of colorectal cancer.
+*TCGA-DLBC: Lymphoid Neoplasm Diffuse Large B-cell Lymphoma (淋巴样肿瘤弥漫大B细胞淋巴瘤)
+A fast-growing type of non-Hodgkin lymphoma that affects B lymphocytes.
+*TCGA-ESCA: Esophageal Carcinoma (食管癌)
+Cancer that forms in the esophagus, the hollow, muscular tube that connects the throat to the stomach. It includes both squamous cell carcinoma and adenocarcinoma of the esophagus.
+*TCGA-GBM: Glioblastoma Multiforme (胶质母细胞瘤)
+An aggressive type of cancer that can form in the brain or spinal cord. It's one of the most common and deadliest primary brain tumors in adults.
+*TCGA-HNSC: Head and Neck Squamous Cell Carcinoma (头颈部鳞状细胞癌)
+Cancers that start in the squamous cells that line the moist surfaces inside the head and neck (e.g., mouth, throat, voice box).
+*TCGA-KICH: Kidney Chromophobe (肾嫌色细胞癌)
+A relatively rare subtype of kidney cancer, originating in the kidney's epithelial cells. It generally has a better prognosis than other kidney cancer types.
+*TCGA-KIRC: Kidney Renal Clear Cell Carcinoma (肾透明细胞癌)
+The most common type of kidney cancer (renal cell carcinoma), characterized by clear-looking cells under a microscope.
+*TCGA-KIRP: Kidney Renal Papillary Cell Carcinoma (肾乳头状细胞癌)
+Another subtype of kidney cancer, often growing in a finger-like or "papillary" pattern.
+*TCGA-LAML: Acute Myeloid Leukemia (急性髓系白血病)
+A fast-growing cancer of the blood and bone marrow, characterized by the rapid growth of abnormal myeloid cells.
+*TCGA-LGG: Brain Lower Grade Glioma (脑低级别胶质瘤)
+A group of less aggressive brain tumors compared to glioblastoma, but they can still be serious and may progress over time.
+*TCGA-LIHC: Liver Hepatocellular Carcinoma (肝细胞癌)
+The most common type of primary liver cancer, originating in the main type of liver cell (hepatocyte).
+*TCGA-LUAD: Lung Adenocarcinoma (肺腺癌)
+A common type of non-small cell lung cancer that begins in the cells that line the alveoli (air sacs) and produce substances like mucus.
+*TCGA-LUSC: Lung Squamous Cell Carcinoma (肺鳞状细胞癌)
+Another common type of non-small cell lung cancer that starts in the flat, scale-like cells that line the inside of the airways in the lungs.
+*TCGA-MESO: Mesothelioma (间皮瘤)
+A rare and aggressive cancer that originates in the lining of the lungs, abdomen, or heart, often linked to asbestos exposure.
+*TCGA-OV: Ovarian Serous Cystadenocarcinoma (卵巢浆液性囊腺癌)
+The most common and aggressive type of epithelial ovarian cancer.
+*TCGA-PAAD: Pancreatic Adenocarcinoma (胰腺腺癌)
+The most common type of pancreatic cancer, originating in the glandular cells of the pancreas. It's known for being aggressive and often diagnosed at late stages.
+*TCGA-PCPG: Pheochromocytoma and Paraganglioma (嗜铬细胞瘤和副神经节瘤)
+Rare tumors that form in cells that produce hormones like adrenaline. Pheochromocytomas occur in the adrenal glands, while paragangliomas occur outside the adrenal glands.
+*TCGA-PRAD: Prostate Adenocarcinoma (前列腺腺癌)
+Cancer that forms in the gland cells of the prostate, a gland in the male reproductive system. It is one of the most common cancers in men.
+*TCGA-READ: Rectum Adenocarcinoma (直肠腺癌)
+A type of cancer that begins in the glandular cells of the rectum, the final section of the large intestine. It's also a form of colorectal cancer.
+*TCGA-SARC: Sarcoma (肉瘤)
+A broad category of cancers that arise from connective tissues (like bone, cartilage, fat, muscle, blood vessels, or other soft tissues).
+*TCGA-SKCM: Skin Cutaneous Melanoma (皮肤黑色素瘤)
+A serious form of skin cancer that begins in melanocytes, the cells that produce the pigment melanin.
+*TCGA-STAD: Stomach Adenocarcinoma (胃腺癌)
+Cancer that forms in the glandular cells of the stomach lining.
+*TCGA-TGCT: Testicular Germ Cell Tumors (睾丸生殖细胞瘤)
+Cancers that start in the germ cells of the testicles, which are responsible for producing sperm. These are the most common cancers in young men.
+*TCGA-THCA: Thyroid Carcinoma (甲状腺癌)
+Cancer that forms in the tissues of the thyroid gland, which is located at the base of the neck and produces hormones.
+*TCGA-THYM: Thymoma and Thymic Carcinoma (胸腺瘤和胸腺癌)
+Rare tumors that originate in the thymus gland, a small organ located behind the breastbone that plays a role in the immune system.
+*TCGA-UCEC: Uterine Corpus Endometrial Carcinoma (子宫内膜癌)
+Cancer that forms in the tissues of the endometrium (the lining of the uterus). It's the most common type of uterine cancer.
+*TCGA-UCS: Uterine Carcinosarcoma (子宫癌肉瘤)
+A rare and aggressive type of uterine cancer that contains both cancerous epithelial (carcinoma) and stromal (sarcoma) components.
+*TCGA-UVM: Uveal Melanoma (葡萄膜黑色素瘤)
+A rare form of melanoma that develops in the uvea, the middle layer of the eye.
+*NB(GSE85047): Neuroblastoma (神经母细胞瘤) (Data from GSE85047, a Gene Expression Omnibus dataset)
+A cancer that develops from immature nerve cells found in several areas of the body, most commonly in the adrenal glands. It primarily affects infants and young children. (The GSE85047 indicates the specific dataset from which this data is sourced, rather than being part of the cancer type name itself.)
 These are the values you can pass to the TCGA_cancer_type argument of the HazardEnrichment function.
 
 ### 4. Perform Hazard Ratio-based GSEA
