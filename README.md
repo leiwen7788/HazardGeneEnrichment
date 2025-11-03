@@ -1,6 +1,6 @@
-HazardGeneEnrichment
+#HazardGeneEnrichment
 
-Introduction
+#Introduction
 
 HazardGeneEnrichment is an R package designed to perform Hazard Ratio-based Gene Set Enrichment Analysis (GSEA) by integrating single-cell RNA sequencing (scRNA-seq) data with Cancer Genome Atlas (TCGA) survival data. This package provides a suite of functions to identify single-cell cluster-specific marker genes and assess the association of these gene sets with prognostic risk in TCGA cancer cohorts.
 Objectives
@@ -8,35 +8,31 @@ To identify cell cluster-specific marker genes from single-cell RNA sequencing d
 To rank genes in TCGA cancer cohorts based on their Hazard Ratios.
 To perform GSEA on single-cell marker gene sets to explore their association with cancer patient survival prognosis.
 To visualize GSEA results, including enrichment plots and key statistical data.
-Installation
-You can install the HazardGeneEnrichment package from GitHub using devtools (assuming your package code is pushed to GitHub):
-code
-R
-# If devtools is not already installed
-# install.packages("devtools")
+#Installation
+You can install the HazardGeneEnrichment package from GitHub using devtools:
 
-devtools::install_github("leiwen7788/HazardGeneEnrichment") # Please replace with your GitHub username and repository name
-Alternatively, if you are developing locally, you can install from a local source:
-code
-R
-# Ensure your working directory is in the parent directory of the HazardGeneEnrichment package
-devtools::install("HazardGeneEnrichment")
-Dependencies
+If devtools is not already installed
+install.packages("devtools")
+
+devtools::install_github("leiwen7788/HazardGeneEnrichment") 
+
+#Dependencies
+
 The HazardGeneEnrichment package relies on the following CRAN and Bioconductor packages. devtools should automatically install these dependencies when you install HazardGeneEnrichment.
 tidyverse (for data manipulation, including dplyr and ggplot2)
 clusterProfiler (for core GSEA functionalities)
 gridExtra (for plot arrangement)
 Package Functions Overview
 The HazardGeneEnrichment package primarily offers the following core functionalities:
-calculate_hazard(): (Internal or helper function, not directly exposed in the example but part of the core logic) Used to perform Cox Proportional Hazards Model analysis on specified TCGA cancer cohorts and extract Hazard Ratios.
+
 display_genesets(): Displays a list of TCGA cancer types supported for analysis by this package.
 HazardEnrichment(): The main function to execute Hazard Ratio-based GSEA.
 gseaplot_hazard(): Plots GSEA enrichment curves, with an option to include a p-value table.
-Detailed Usage Workflow (Reproducing Example Code)
+
+#Detailed Usage Workflow
 This section will detail how to use the HazardGeneEnrichment package and reproduce the analysis workflow you've demonstrated in your code.
 1. Load Necessary Libraries
-code
-R
+
 # Load your developed package
 library(HazardGeneEnrichment)
 
@@ -55,10 +51,10 @@ R
 marker <- read.table('all.diffgene_onlypos_padj005.txt',
                      header = TRUE, # Adjust based on your file's actual header status
                      sep = "\t")    # Adjust based on your file's actual separator
+                     
 2.2 Load Single-Cell Gene List
 This is a list of all genes present in your single-cell dataset, which will be used as the background gene set for GSEA.
-code
-R
+
 # Extract all gene names from the Seurat object
 seuratobj <- readRDS('seuratObject.rds')
 singlecell_gene <- rownames(seuratobj)
