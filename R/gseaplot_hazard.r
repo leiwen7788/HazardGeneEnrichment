@@ -27,7 +27,7 @@ gseaplot_hazard<-function (x, geneSetID, title = "", color = "green", base_size 
     gsdata <- enrichplot:::gsInfo(x, geneSetID)
   }
   else {
-    gsdata <- do.call(rbind, lapply(geneSetID, gsInfo, object = x))
+    gsdata <- do.call(rbind, lapply(geneSetID, enrichplot:::gsInfo, object = x))
   }
   p <- ggplot(gsdata, aes_(x = ~x)) + xlab(NULL) + theme_classic(base_size) +
     theme(panel.grid.major = element_line(colour = "grey92"),
@@ -105,7 +105,7 @@ gseaplot_hazard<-function (x, geneSetID, title = "", color = "green", base_size 
     for (i in seq_len(ncol(pd))) {
       pd[, i] <- format(pd[, i], digits = 4)
     }
-    tp <- tableGrob2(pd, p.res)
+    tp <- enrichplot:::tableGrob2(pd, p.res)
     p.res <- p.res + theme(legend.position = "none") + annotation_custom(tp,
                                                                          xmin = quantile(p.res$data$x, 0.5), xmax = quantile(p.res$data$x,
                                                                                                                              0.95), ymin = quantile(p.res$data$runningScore,

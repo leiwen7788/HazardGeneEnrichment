@@ -11,15 +11,15 @@ Authors@R: c(
     )
   )
 Description: Gene set enrichment analysis (GSEA) based on Hazard Ratio-ranked genes to investigate the distribution of gene sets.
-License: What license is it under?
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.1
 Imports:
-    ggplot2 (4.0.0),
-    clusterProfiler (4.6.2),
-    org.Hs.eg.db (3.16.0),
-    DOSE (3.24.2),
-    HGNChelper (0.8.15),
-    enrichplot (1.18.4),
-    RColorBrewer (1.1-3)
+    ggplot2 (>= 4.0.0),
+    clusterProfiler (>= 4.6.2),
+    org.Hs.eg.db (>= 3.16.0),
+    DOSE (>= 3.24.2),
+    HGNChelper (>= 0.8.15),
+    enrichplot (>= 1.18.4),
+    RColorBrewer (>= 1.1-3)
