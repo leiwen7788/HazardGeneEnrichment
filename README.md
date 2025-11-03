@@ -36,13 +36,14 @@ This section will detail how to use the HazardGeneEnrichment package and reprodu
 
 ### 1. Load Necessary Libraries
 
-```# Load your developed package
+```
+# Load your developed package
 library(HazardGeneEnrichment) 
 # Load other dependency packages
 library(tidyverse)
 library(clusterProfiler)
-library(gridExtra) # For combining plots```
-
+library(gridExtra) # For combining plots
+```
 
 ### 2. Prepare Input Data
 
@@ -52,40 +53,46 @@ You will need to prepare a marker gene table from single-cell RNA sequencing dat
 
 The marker table contains differentially expressed genes identified from single-cell data. We assume it has been pre-processed to include columns like cluster and avg_log2FC.
 
-```# Load the marker gene table from the specified path
+```
+# Load the marker gene table from the specified path
 # This file is assumed to contain marker gene information for various single-cell clusters
 marker <- read.table('all.diffgene_onlypos_padj005.txt',
                      header = TRUE, # Adjust based on your file's actual header status
-                     sep = "\t")    # Adjust based on your file's actual separator```
-                     
+                     sep = "\t")    # Adjust based on your file's actual separator
+```                     
 #### 2.2 Load Single-Cell Gene List
 
 This is a list of all genes present in your single-cell dataset, which will be used as the background gene set for GSEA.
 
-```# Extract all gene names from the Seurat object
+```
+# Extract all gene names from the Seurat object
 seuratobj <- readRDS('seuratObject.rds')
 singlecell_gene <- rownames(seuratobj)
 
 # Ensure singlecell_gene is a character vector
 if (!is.character(singlecell_gene)) {
   `singlecell_gene <- as.character(singlecell_gene)
-}```
+}
+```
 
 #### 2.3 Filter Top 50 Marker Genes per Cluster
 This step prepares the gene sets for GSEA enrichment analysis. We select the top 50 genes with the highest avg_log2FC for each cell cluster.
 
-```top50_markers <- marker %>%
+```
+top50_markers <- marker %>%
   dplyr::group_by(cluster) %>%
   dplyr::slice_max(n = 50, order_by = avg_log2FC)
 
 # View a portion of the filtered marker genes
-head(top50_markers)```
+head(top50_markers)
+```
 
 #### 2.4 Format Gene Set Data (TERM2GENE)
 
 GSEA tools like clusterProfiler typically require gene set data in a specific format: a data frame with two columns, term and gene. The term column represents the gene set name (here, the cell cluster name), and the gene column represents the gene ID.
 
-```TERM2GENE <- top50_markers[, c('cluster', 'gene')]
+```
+TERM2GENE <- top50_markers[, c('cluster', 'gene')]
 colnames(TERM2GENE) <- c('term', 'gene')
 TERM2GENE <- as.data.frame(TERM2GENE)
 
@@ -93,14 +100,17 @@ TERM2GENE <- as.data.frame(TERM2GENE)
 TERM2GENE$gene <- as.character(TERM2GENE$gene)
 
 # View a portion of the formatted gene set data
-head(TERM2GENE)```
+head(TERM2GENE)
+```
 
 ### 3. View Available TCGA Cancer Cohorts
 
 The display_genesets() function shows a list of TCGA cancer types that HazardGeneEnrichment package supports for analysis.
 
-```# List all supported TCGA cancer cohorts
-display_genesets()```
+```
+# List all supported TCGA cancer cohorts
+display_genesets()
+```
 
 Example output:
 "TCGA-ACC"     "TCGA-BLCA"    "TCGA-BRCA"    "TCGA-CESC"    ... "TCGA-UVM"     "NB(GSE85047)"`
@@ -110,7 +120,8 @@ These are the values you can pass to the TCGA_cancer_type argument of the Hazard
 
 Now, we can use the HazardEnrichment() function to perform GSEA for a specific TCGA cancer cohort. In this example, we select TCGA-HNSC (Head and Neck Squamous Cell Carcinoma).
 
-```# Execute Hazard Ratio-based GSEA
+```
+# Execute Hazard Ratio-based GSEA
 # TCGA_cancer_type: Specifies the TCGA cancer type to analyze, e.g., "TCGA-HNSC"
 # TERM2GENE: The formatted gene set data frame
 # pvalueCutoff: The p-value threshold for GSEA
@@ -124,18 +135,21 @@ my_gsea_results <- HazardEnrichment(TCGA_cancer_type = 'TCGA-HNSC',
 summary(my_gsea_results)
 
 # View the gene set IDs (cluster names) from the GSEA results
-unique(my_gsea_results@result$ID)```
+unique(my_gsea_results@result$ID)
+```
 
 ### 5. Visualize GSEA Results
 
 Use the gseaplot_hazard() function to draw the GSEA enrichment curves. You can choose to plot all significantly enriched gene sets or specify particular gene set IDs.
 
-```# Plot all significantly enriched gene sets
+```
+# Plot all significantly enriched gene sets
 # geneSetID = unique(my_gsea_results@result$ID) will plot all gene sets present in the results
 # pvalue_table = TRUE will include a table of p-values and q-values in the plot
 gseaplot_hazard(my_gsea_results,
                 geneSetID = unique(my_gsea_results@result$ID),
-               pvalue_table = TRUE)```
+               pvalue_table = TRUE)
+```
 
 
 
