@@ -1,5 +1,7 @@
 HazardGeneEnrichment
+
 Introduction
+
 HazardGeneEnrichment is an R package designed to perform Hazard Ratio-based Gene Set Enrichment Analysis (GSEA) by integrating single-cell RNA sequencing (scRNA-seq) data with Cancer Genome Atlas (TCGA) survival data. This package provides a suite of functions to identify single-cell cluster-specific marker genes and assess the association of these gene sets with prognostic risk in TCGA cancer cohorts.
 Objectives
 To identify cell cluster-specific marker genes from single-cell RNA sequencing data.
