@@ -1,5 +1,4 @@
-HazardGeneEnrichment R Package README
-
+HazardGeneEnrichment
 Introduction
 HazardGeneEnrichment is an R package designed to perform Hazard Ratio-based Gene Set Enrichment Analysis (GSEA) by integrating single-cell RNA sequencing (scRNA-seq) data with Cancer Genome Atlas (TCGA) survival data. This package provides a suite of functions to identify single-cell cluster-specific marker genes and assess the association of these gene sets with prognostic risk in TCGA cancer cohorts.
 Objectives
@@ -14,7 +13,7 @@ R
 # If devtools is not already installed
 # install.packages("devtools")
 
-devtools::install_github("YourGitHubUserName/HazardGeneEnrichment") # Please replace with your GitHub username and repository name
+devtools::install_github("leiwen7788/HazardGeneEnrichment") # Please replace with your GitHub username and repository name
 Alternatively, if you are developing locally, you can install from a local source:
 code
 R
