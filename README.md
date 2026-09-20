@@ -71,7 +71,7 @@ singlecell_gene <- rownames(seuratobj)
 
 # Ensure singlecell_gene is a character vector
 if (!is.character(singlecell_gene)) {
-  `singlecell_gene <- as.character(singlecell_gene)
+  singlecell_gene <- as.character(singlecell_gene)
 }
 ```
 
@@ -193,7 +193,7 @@ Now, we can use the HazardEnrichment() function to perform GSEA for a specific T
 # TERM2GENE: The formatted gene set data frame
 # pvalueCutoff: The p-value threshold for GSEA
 # singlecell_gene: The background list of all single-cell genes, used for filtering
-my_gsea_results <- HazardEnrichment(TCGA_cancer_type = 'TCGA-HNSC',
+my_gsea_results <- HazardEnrichment(geneList = 'TCGA-HNSC',
                                   TERM2GENE = TERM2GENE,
                                   pvalueCutoff = 0.05,
                                   singlecell_gene = singlecell_gene)
