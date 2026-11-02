@@ -28,7 +28,7 @@ HazardEnrichment<-function(geneList,TERM2GENE,pvalueCutoff=0.05,singlecell_gene)
   geneList_1<- geneList_1/max(geneList_1)*cutoff_gene
   geneList_2<- -(geneList_2/min(geneList_2))*cutoff_gene
   geneList<-c(geneList_1,geneList_2)
-  geneList<-geneList[geneList<=2&geneList>=-2]
+  #geneList<-geneList[geneList<=2&geneList>=-2]
   geneList<-sort(geneList, decreasing = TRUE)
 
   my_gsea_results <- GSEA(
