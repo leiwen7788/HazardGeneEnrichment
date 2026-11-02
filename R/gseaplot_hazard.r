@@ -83,7 +83,7 @@ gseaplot_hazard<-function (x, geneSetID, title = "", color = "green", base_size 
   df2$y <- p$data$geneList[df2$x]
   p.pos <- p + geom_segment(data = df2, aes_(x = ~x, xend = ~x,
                                              y = ~y, yend = 0), color = "grey")
-  p.pos <- p.pos + ylab("LogRazardRatio") + xlab("Rank in Ordered Dataset") +
+  p.pos <- p.pos + ylab("LogRazardRatio-Scaled") + xlab("Rank in Ordered Dataset") +
     theme(plot.margin = margin(t = -0.1, r = 0.2, b = 0.2,
                                l = 0.2, unit = "cm"))
   if (!is.null(title) && !is.na(title) && title != "")
